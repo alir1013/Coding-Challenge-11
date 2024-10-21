@@ -21,3 +21,12 @@ function updateTotalPrice() {
 productDropdown.addEventListener('change', updateTotalPrice);
 quantityInput.addEventListener('input', updateTotalPrice);
 
+//Task 4:
+// Handle order submission
+placeOrderButton.addEventListener('click', function() {
+    const selectedProduct = productDropdown.options[productDropdown.selectedIndex].text;
+    const quantity = quantityInput.value;
+    const totalPrice = totalPriceElement.textContent;
+    
+    orderSummary.textContent = `Your order contains ${quantity} of ${selectedProduct}. The total price: $${totalPrice}`; //response for when place order button is clicked
+});
